@@ -8,7 +8,7 @@ The intension of it is to stop wasting time with setting up a new projects basic
 I'm constantly adding more libraries to core functionalities as I need to use them in my projects, you can see the list in the git's wiki. Feel free to ask or add more :)
 
 Functionalities:
-________________
+----------------
 -  MySQL CRUD
 -  MySQL database dump for backups
 -  Contact form, mail handling
@@ -21,7 +21,7 @@ ________________
 Everything set for quick and easy use.
 
 Usage:
-______
+------
 
 Any page can be quickly started like this
 ```
