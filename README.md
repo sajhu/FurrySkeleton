@@ -38,7 +38,7 @@ Any page can be quickly started like this
 ?>
 ```
 
-For seetings, you should have a look at `config.php` and also get the correct user role from the database at `core.php` in the _Session Globals_ section 
+For seetings, you should have a look at `mod.Settings.php` and also get the correct user role from the database at the core `FurrySkeleton.php` in the _Session Globals_ section 
 
 
 **keywords:** _HTML5_, _jQuery_, _CSS3_, _PHP simple framework_, _database CRUD_
