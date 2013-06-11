@@ -24,7 +24,7 @@ Usage:
 ------
 
 Any page can be quickly started like this
-```
+```php
 <?php
   include_once('core.php');
   definePrivileges(ADMIN_ROLE);
