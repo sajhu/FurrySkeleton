@@ -15,7 +15,7 @@
 // --- Includes
 // --------------------------------------------
 
-include_once('mod.Settings.php');
+include_once('config.php');
 include_once(PHP_FOLDER.'/functions.php');
 include_once(MAIN_FOLDER.'/mod.Security.php');
 include_once(MAIN_FOLDER.'/mod.View.php');
