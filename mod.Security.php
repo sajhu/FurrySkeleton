@@ -9,28 +9,30 @@
 	function handdleSession()
 	{
 		session_start();
+
+		// If a logout parameter was passed by get, endSession
 		if(isset($_GET['logout']))
 		{
 			endSession();
 		}
-		//TODO re-verificar las credenciales
-		else if(!isset($_SESSION['user']) || !isset($_SESSION['hash'])) // existe la sesión
+
+		//TODO should re-verify hash
+		else if(!isset($_SESSION['user']) || !isset($_SESSION['hash'])) // there is a session
 		{
 			header('Location: '.LOGIN_PAGE);
 		}
 		
+		// Regenerates Session if it was created a lot ago
 		if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['CREATED'] > SESSION_REGENERATE_TIME)) {
-			// session started more than 5 minutes ago
 			session_regenerate_id(true);    // change session ID for the current session an invalidate old session ID
 			$_SESSION['CREATED'] = time();  // update creation time
 		}
-		// Cierra la sesión si lleva más de 15 minutos
+
+		// End session if there was no activity
 		if (isset($_SESSION['LAST_ACTIVITY']) && ((time() - $_SESSION['LAST_ACTIVITY']) > SESSION_EXPIRE_TIME)) {
-	    // last request was more than 15 minutes ago
 		    endSession();
 		}
-
-		$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+		$_SESSION['LAST_ACTIVITY'] = time(); // always update last activity time stamp
 
 	}
 
@@ -58,11 +60,15 @@
 
 	/**
 	 * Sanitizes any input string agaist SQLInjections and XSS
-	 * @requires an existing MySQL connection is required for it to work. Will only scape HTML if there isn't one.
+	 * @requires an existing MySQL connection is required for it to work. Will put scape slashes if there isn't one.
 	 */
 	function sanitize($string)
 	{
-		return @mysql_real_escape_string(htmlspecialchars(trim($string)));	
+		try {
+			return mysql_real_escape_string(htmlspecialchars(trim($string)));	
+		} catch (Exception $e) {
+			return add_slashes(htmlspecialchars(trim($string)));
+		}
 	}
 
 ?>

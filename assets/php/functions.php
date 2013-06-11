@@ -29,4 +29,37 @@
 		$dump->start($path.'/'.$filename);
 		return $path.'/'.$filename;
 	}
+
+	/**
+	 * Sends a mail
+	 * @param $fromEmail senders email address
+	 * @param $toEmail recipients email address
+	 * @param $subject mail's subject
+	 * @param $message mail's content
+	 * @param $fromName senders name, optional
+	 * @param $toName recipients name, optional
+	 * @return should check === true for confirmation. otherwise a string with the error message will be returned
+	 */
+	function sendMail($fromEmail, $toEmail, $subject, $message, $fromName = '', $toName = '')
+	{
+		try {
+			include_once(PHP_FOLDER.'Mailer.php');
+
+			// minimal requirements to be set
+			$Mailer = new Mailer();
+			$Mailer->setFrom($fromName, $fromEmail);
+			$Mailer->addRecipient($toName, $toEmail);
+			$Mailer->fillSubject($subject);
+			$Mailer->fillMessage($message);
+			
+
+			
+			// now we send it!
+			$Mailer->send();
+			return true;
+		} catch (Exception $e) {
+			return $e->getMessage();
+		}
+	}
+
 ?>

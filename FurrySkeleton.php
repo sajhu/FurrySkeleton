@@ -19,6 +19,7 @@ include_once('config.php');
 include_once(PHP_FOLDER.'/functions.php');
 include_once(MAIN_FOLDER.'/mod.Security.php');
 include_once(MAIN_FOLDER.'/mod.View.php');
+include_once(PHP_FOLDER.'/class.MySQL.php');
 
 
 // --------------------------------------------
@@ -28,6 +29,7 @@ include_once(MAIN_FOLDER.'/mod.View.php');
 	// Checking for a correct session
 	handdleSession();
 
+	$DB = new MySQL(DB_NAME, DB_USER, DB_PASSWORD, DB_HOST);
 
 // --------------------------------------------
 // --- Session Globals - **** PLEASE EDIT HERE ***
@@ -47,8 +49,8 @@ include_once(MAIN_FOLDER.'/mod.View.php');
 // --------------------------------------------
 
 	/**
-	* Defines user role privileges needed to excecute the actual page or method dentro de un método los privilegios necesarios para ejecutarlo 
-	* @param $role int - needed role as defined in config file
+	* Defines user role privileges needed to excecute the actual page or method 
+	* @param $role int - needed role as defined in mod.Settings.php file
 	* @param $only boolean - TRUE means only that role is allowed, FALSE for that and higher roles
 	*/
 	function definePrivileges($role, $only = FALSE)

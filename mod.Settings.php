@@ -39,8 +39,8 @@
 	// * User Roles *
 	// Add or change the names and levels of the roles as you which, this is an example
 	define('ADMIN_ROLE', 10);
-	define('SECOND_ROLE', 5);
-	define('THIRD_ROLE', 1);
+	define('MOD_ROLE', 5);
+	define('USER_ROLE', 1);
 
 	// Session Times in seconds
 	define('SESSION_REGENERATE_TIME', 300);
