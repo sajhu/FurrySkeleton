@@ -34,6 +34,18 @@
 
 	}
 
+	// Deletes all Sessions
+	function endSession()
+	{
+		session_start();
+		unset($_SESSION['id']);
+		unset($_SESSION['user']);
+		unset($_SESSION['hash']);
+		unset($_SESSION['LAST_ACTIVITY']);
+		unset($_SESSION['CREATED']);
+		session_destroy();
+		header('Location: '.LOGIN_PAGE);
+	}
 	/**
 	 *	Returns the session atribute in the parameter
 	 * @param $name the session name to be returned
