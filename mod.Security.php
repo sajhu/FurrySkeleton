@@ -64,10 +64,11 @@
 	 */
 	function sanitize($string)
 	{
+		//TODO should check first for Magic Quotes GPC
 		try {
 			return mysql_real_escape_string(htmlspecialchars(trim($string)));	
 		} catch (Exception $e) {
-			return add_slashes(htmlspecialchars(trim($string)));
+			return addslashes(htmlspecialchars(trim($string)));
 		}
 	}
 
