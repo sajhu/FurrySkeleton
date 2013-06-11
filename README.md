@@ -5,7 +5,7 @@ This is a code skeleton for quick-starting development of Bootstrap+PHP+MySQL we
 
 The intension of it is to stop wasting time with setting up a new projects basic structure and functionalities. It comes out-of-the-box with Jasny Bootstrap, and APIs for database `CRUD` using and dumps, `template system`, sending `mails`, managing `sessions` & `user-roles`.
 
-I'm constantly adding more libraries to core functionalities as I need to use them in my projects. Feel free to ask or add more :)
+I'm constantly adding more libraries to core functionalities as I need to use them in my projects, you can see the list in the git's wiki. Feel free to ask or add more :)
 
 Functionalities:
 - [x] MySQL CRUD
