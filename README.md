@@ -26,7 +26,7 @@ Usage:
 Any page can be quickly started like this
 ```php
 <?php
-  include_once('core.php');
+  include_once('FurrySkeleton.php');
   definePrivileges(ADMIN_ROLE);
   
   printHeader('Hello World!');
