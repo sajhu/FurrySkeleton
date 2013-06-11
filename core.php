@@ -1,10 +1,10 @@
 <?php
 /**
- * Aplicación Web ERP + CRM para Activar SAS
- * Copyright (C) 2013 Activar SAS
+ * FurrySkeleton WebApp Framework
+ * for quick developement of Bootstrap based PHP apps.
+ *
  * Desarrollada por:
  * 	Santiago Rojas - www.santiagorojas.co
- * 	Sergio Charpak - 
  */
 
 
