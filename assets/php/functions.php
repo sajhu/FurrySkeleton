@@ -80,7 +80,8 @@
 	        86400 => 'day',
 	        3600 => 'hour',
 	        60 => 'minute',
-	        1 => 'second'
+	        1 => 'second',
+	        0 => 'just now'
 	    );
 
 	    foreach ($tokens as $unit => $text) {
@@ -90,7 +91,7 @@
 	    }
 	}
 
-	
+
 	/**
 	 * Returns a smart filesize indicating the corresponding space units 
 	 * It will use b, Kb, Mb, in each case
