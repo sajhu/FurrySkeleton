@@ -62,4 +62,32 @@
 		}
 	}
 
+	/**
+	 * Returns the time elapsed between a time given and now in human-readable form
+	 * For example: 4 days, 3 minutes
+	 * @param $time measured in the Unix Epoch format
+	 * @return String saying the time between that date and now in a human form
+	 */
+	function humanTiming ($time)
+	{
+
+	    $time = time() - $time; // to get the time since that moment
+
+	    $tokens = array (
+	        31536000 => 'year',
+	        2592000 => 'month',
+	        604800 => 'week',
+	        86400 => 'day',
+	        3600 => 'hour',
+	        60 => 'minute',
+	        1 => 'second'
+	    );
+
+	    foreach ($tokens as $unit => $text) {
+	        if ($time < $unit) continue;
+	        $numberOfUnits = floor($time / $unit);
+	        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+	    }
+
+	}
 ?>
