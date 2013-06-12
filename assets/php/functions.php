@@ -88,6 +88,22 @@
 	        $numberOfUnits = floor($time / $unit);
 	        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
 	    }
+	}
 
+	
+	/**
+	 * Returns a smart filesize indicating the corresponding space units 
+	 * It will use b, Kb, Mb, in each case
+	 * @param $path string - the complete path to the file to be sized
+	 * @return string - with the corresponding smart size of the file
+	 */
+	function smartFileSize($path)
+	{
+		$size = filesize($path);
+		$size = max(0, (int)$size);
+		$units = array( 'b', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb', 'Eb', 'Zb', 'Yb');
+		$power = $size > 0 ? floor(log($size, 1024)) : 0;
+
+		return number_format($size / pow(1024, $power), 2, '.', ',') . $units[$power];
 	}
 ?>
