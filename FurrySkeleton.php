@@ -49,13 +49,28 @@ include_once(PHP_FOLDER.'/class.MySQL.php');
 // --------------------------------------------
 
 	/**
-	* Defines user role privileges needed to excecute the actual page or method 
+	* Defines user role privileges needed to excecute the actual page
+	* if the privilege check fails will print an error page and exit
 	* @param $role int - needed role as defined in mod.Settings.php file
 	* @param $only boolean - TRUE means only that role is allowed, FALSE for that and higher roles
 	*/
 	function definePrivileges($role, $only = FALSE)
 	{
 		if(($only && USER_ROLE != $role) || (!$only &&  USER_ROLE < $role))
-			printError('You don\'t have the required permissions to perform this.',true);
+			printError('You don\'t have the required permissions to see this page.',true);
 	}
+
+	/**
+	* Helps to checks user role privileges before executing a method or action
+	* @param $role int - needed role as defined in mod.Settings.php file
+	* @param $only boolean - TRUE means only that role is allowed, FALSE for that and higher roles
+	*/
+	function checkPrivileges($role, $only = FALSE)
+	{
+		if(($only && USER_ROLE != $role) || (!$only &&  USER_ROLE < $role))
+			return false;
+		else
+			return true;
+	}	
+
 ?>
