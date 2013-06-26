@@ -1,13 +1,13 @@
 <?php
 /**
- * FurrySkeleton WebApp Framework
- * for quick developement of Bootstrap based PHP apps.
+ * ActivarSAS ERP
+ * aplicacion para www.activarsas.com Copyright (C) Activar SAS
  *
  * Developed by:
  * 	Santiago Rojas - www.santiagorojas.co
+ *  Sergio Hernandez Charpak 
  *
- * Version 1.2a
- * check for latest updates at https://github.com/sajhu/FurrySkeleton
+ * basado en el FrameWork FurrySkeleteton - https://github.com/sajhu/FurrySkeleton
  */
 
 
@@ -29,7 +29,7 @@ include_once(MAIN_FOLDER.	'core.View.php');
 	// Checking for a correct session
 	handdleSession();
 
-	$DB = new MySQL(DB_NAME, DB_USER, DB_PASSWORD, DB_HOST);
+	//$DB = new MySQL(DB_NAME, DB_USER, DB_PASSWORD, DB_HOST);
 
 // --------------------------------------------
 // --- Session Globals - **** PLEASE EDIT HERE ***
@@ -40,8 +40,8 @@ include_once(MAIN_FOLDER.	'core.View.php');
 		define("USER_ID", getSession('id'));
 		#$userVars = $DB->Select('USERS', array('id' => USER_ID));
 				
-		define('USER_ROLE', SECOND_ROLE);  #Needs to be set to the actual user's role, for example: $userVars['role']
-		define('USER_DISPLAY_NAME', getSession('user')); // By default uses username, should consider changing it to user's full name
+		define('USER_ROLE', CELADOR_ROLE);  #Needs to be set to the actual user's role, for example: $userVars['role']
+		define('USER_DISPLAY_NAME', getSession('user'));
 
 
 // --------------------------------------------

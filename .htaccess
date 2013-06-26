@@ -1,0 +1,10 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+	deny from all
+</Files>
+
+Options -Indexes
+
+
+ErrorDocument 403 /ActWeb/admin/static/403.php
+ErrorDocument 404 /ActWeb/admin/static/404.php
+ErrorDocument 500 /ActWeb/admin/static/500.php
