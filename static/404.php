@@ -92,7 +92,7 @@
 	<div id="footer" class="powered">
 		<?php
 				if(@include('http://santiagorojas.co/credits.php'));
-				else print('<p>is Powered by <a href="http://santiagorojas.co">FurrySkeleton</a></p>');
+				else print('<p>Powered by <a href="http://santiagorojas.co">FurrySkeleton</a></p>');
 		?>
 	</div>
 	<!-- start: JavaScript-->

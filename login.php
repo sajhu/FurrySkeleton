@@ -1,13 +1,12 @@
 <?php
 /**
- * Activar SAS ERP
- * aplicacion para www.activarsas.com Copyright (C) Activar SAS
+ * FurrySkeleton WebApp Framework
+ * for quick developement of Bootstrap based PHP apps.
  *
  * Developed by:
  * 	Santiago Rojas - www.santiagorojas.co
- *  Sergio Hernandez Charpak 
  *
- * basado en el FrameWork FurrySkeleteton - https://github.com/sajhu/FurrySkeleton
+ * check for latest updates at https://github.com/sajhu/FurrySkeleton
  */
 
  // -----------------------------------------------
@@ -19,6 +18,7 @@
  // -----------------------------------------------	
 
 	include_once('core.Settings.php');
+	include_once('core.Security.php');
 
 	$estado = 0;
 	
@@ -40,10 +40,11 @@
 		if($user == 'admin' && $password == 'admin')
 		{
 			session_start();
-			$_SESSION['id'] = 0;
-			$_SESSION['user'] = $user;
-			$_SESSION['CREATED'] = time();
-			$_SESSION['LAST_ACTIVITY'] = time();
+				setSession('id', 0);
+				setSession('user', $user);
+				setSession('hash', '');
+				setSession('CREATED', time());
+				setSession('LAST_ACTIVITY', time());
 
 			header("Location: " . $url); // Redirect
 		}
@@ -60,7 +61,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8" />
-	<title>Inicio - Activar ERP</title>
+	<title>Login - <?php echo DEFAULT_TITLE;?></title>
 	<meta name="description" content="ACME Dashboard Bootstrap Admin Template." />
 	<meta name="author" content="Łukasz Holeczek" />
 	<meta name="keyword" content="ACME, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" />
@@ -109,25 +110,39 @@
 			<div class="row-fluid">
 				<div class="login-box">
 					<div class="icons">
-						<a href="../"><i class="halflings-icon home"></i></a>
-						<a href="../contactenos.html"><i class="halflings-icon info-sign"></i></a>
+						<a href="<?php echo BASE_URL;?>"><i class="icon-home"></i></a>
+						<a href="<?php echo BASE_URL;?>contact.html"><i class=" icon-envelope"></i></a>
 					</div>
-					<h1 style="margin-left: 30px;">Bienvenido al ERP</h1>
+					<h1 style="margin-left: 30px;">Welcome to FurrySkeleton</h1>
 					<div style="text-align:center;">
-						<img src="<?php echo IMAGE_URL;?>logo-login.png" alt="Activar SAS - ERP">
+						<img src="<?php echo IMAGE_URL;?>FurrySkeleton-horizontal.png" alt="FurrySkeleton logo" width="220px">
 					</div>
-					<form class="form-horizontal" action="login.php?redirectTo=<?php echo $url;?>" method="post" >
-						<fieldset>
+
+					<div style="text-align:center;">
+						<span id="signinButton">
+						  <span
+						    class="g-signin"
+						    data-callback="signinCallback"
+						    data-clientid="578923594429.apps.googleusercontent.com"
+						    data-cookiepolicy="single_host_origin"
+						    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+						    data-scope="https://www.googleapis.com/auth/plus.login"
+						    data-width="wide">
+						  </span>
+						</span>
+					</div>
+					<form class="form-horizontal" action="<?php echo ACTUAL_URL?>?redirectTo=<?php echo $url;?>" method="post" >
+						<fieldset class="login-box-content">
 							
 							<div class="input-prepend" title="Username">
-								<span class="add-on"><i class="halflings-icon user"></i></span>
-								<input class="input-large span10" name="username" id="username" type="text" placeholder="Cuenta de Usuario" />
+								<span class="add-on"><i class=" icon-user"></i></span>
+								<input class="" name="username" id="username" value="admin" type="text" placeholder="Username" />
 							</div>
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password">
-								<span class="add-on"><i class="halflings-icon lock"></i></span>
-								<input class="input-large span10" name="password" id="password" type="password" placeholder="Contraseña" />
+								<span class="add-on"><i class="icon-fire"></i></span>
+								<input class="" name="password" id="password" type="password" placeholder="Password" />
 							</div>
 							<div class="clearfix"></div>
 <?php
@@ -140,10 +155,10 @@
 ?>
 							
 
-							<label class="remember" for="remember"><input name="remember" type="checkbox" id="remember"> Recordarme</label>
+							<label class="remember" for="remember"><input name="remember" type="checkbox" id="remember"> Remember me</label>
 
 							<div class="button-login">	
-								<button type="submit" name="login" class="btn btn-large btn-info">Ingresar</button>
+								<button type="submit" name="login" class="btn btn-large">Sign In</button>
 							</div>
 							<div class="clearfix"></div>
 					</form>
@@ -171,6 +186,13 @@
 		<script src="<?php echo JS_URL;?>bootstrap.js"></script>
 
 	<!-- end: JavaScript-->
-	
+	  <!-- Place this asynchronous JavaScript just before your </body> tag -->
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
 </body>
 </html>
