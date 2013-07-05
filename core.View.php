@@ -1,4 +1,13 @@
 <?php
+/**
+ * FurrySkeleton WebApp Framework
+ * for quick developement of Bootstrap based PHP apps.
+ *
+ * Developed by:
+ * 	Santiago Rojas - www.santiagorojas.co
+ *
+ * check for latest updates at https://github.com/sajhu/FurrySkeleton
+ */
 
 	/**
 	 * Prints the page

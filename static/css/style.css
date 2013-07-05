@@ -2001,15 +2001,15 @@ input[type="file"],
 	padding-top: 5px;
 }
 
-.login-box .icons i {
+.login-box .add-on i {
 	text-align: right;
-	opacity: .2;
-	filter: alpha(opacity=20);
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	opacity: .4;
+	filter: alpha(opacity=40);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
 	margin: 0px 5px;
 }
 
-.login-box .icons i:hover {
+.login-box .add-on i:hover {
 	opacity: .8;
 	filter: alpha(opacity=80);
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -2069,15 +2069,15 @@ input[type="file"],
 }
 
 .login-box .add-on i{
-	opacity: .1;
-	filter: alpha(opacity=10);
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	opacity: .3;
+	filter: alpha(opacity=30);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 }
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
 	border: 1px solid #eee !important;
-	color: #aaa;
+	color: #939393;
 	border-left: none !important;
 	-webkit-box-shadow: none;
        -moz-box-shadow: none;

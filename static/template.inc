@@ -29,20 +29,14 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div id="furryNavbar" class="nav navbar navbar-fixed-top ">
       <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Furry Skeleton</a>
-          <div class="nav-collapse collapse">
+          <a class="brand" href="<?php echo BASE_URL;?>"><img src="<?php echo IMAGE_URL;?>FurrySkeleton-horizontal.png" style="height:17px" alt="Furry Skeleton"> Furry Skeleton</a>
+          <div id="navVar" class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#whatisit">What is it?</a></li>
+              <li><a href="#features">Features</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -55,44 +49,86 @@
                   <li><a href="#">One more separated link</a></li>
                 </ul>
               </li>
+              <li><a href="?logout">Log Out</a></li>
+
             </ul>
+            <div class="pull-right">
+
+            </div>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-spy="scroll" data-target="#furryNavbar" data-offset="40">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
+      <div class="hero-unit" id="whatisit">
         <h1>Hello, Developer!</h1>
         <p>This is a framework for starting a quick Web App PHP+MySQL development. It is based on the wonderfulness of Twitter's <a href="http://twitter.github.com/bootstrap">Bootstrap</a> extended by <a href="http://jasny.github.io/bootstrap">Jasny</a> and other open source libraries.</p>
+        <div class="text-center">
+          <img src="<?php echo IMAGE_URL;?>FurrySkeleton.png" width="200">
+        </div>
         <p><a href="https://github.com/sajhu/FurrySkeleton" class="btn btn-primary btn-large">Watch this at Github &raquo;</a><a href="http://development.santiagorojas.co/FurrySkeleton" class="btn btn-primary btn-large pull-right">See Docs & More &raquo;</a></p>
       </div>
 
       <!-- Example row of columns -->
-      <div class="row">
+      <div class="row" id="features">
         <div class="span4">
-          <h2>Heading</h2>
+          <h2><i class="iconic-layers-alt"></i> MVC Framework</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
         <div class="span4">
-          <h2>Heading</h2>
+          <h2><i class=" iconic-bolt"></i> Super Fast Start</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn" href="#">View details &raquo;</a></p>
        </div>
         <div class="span4">
-          <h2>Heading</h2>
+          <h2><i class=" iconic-cog"></i> Bunch of Utilities</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
       </div>
-
+      <div class="row">
+        <div class="span4">
+          <h2><i class=" iconic-key-stroke"></i> Security from it's Roots</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2><i class=" iconic-fork"></i> Open Source</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2><i class=" iconic-book-alt2"></i> Easy Documentation</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+       <div class="row">
+        <div class="span4">
+          <h2><i class="iconic-loop"></i> Always getting Better</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2><i class="iconic-brush"></i> Template System</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2><i class=" iconic-lightbulb"></i> Easy Documentation</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+  
       <hr>
 
       <footer>
-        <p>&copy; Developed by <a href="http://santiagorojas.co">Santiago Rojas</a>.</p>
+        <p>Open Source &copy; Developed by <a href="http://santiagorojas.co">Santiago Rojas</a>.</p>
       </footer>
 
     </div> <!-- /container -->

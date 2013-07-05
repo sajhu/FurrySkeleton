@@ -18,9 +18,8 @@
 	// Change this seetings as desired, as long as you know what they mean
 	// IMPORTANT: parts marked * like this * MUST be set.
 	// ---------------------------------------------------------------------------------
+
 // --------------------------------------------
-
-
 
 	// Default page <title></title>
 	define('DEFAULT_TITLE', 'FurrySkeleton');
